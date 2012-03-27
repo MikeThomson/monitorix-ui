@@ -6,6 +6,7 @@ class UserController extends Zend_Controller_Action
     public function init()
     {
         /* Initialize action controller here */
+    	$this->session = new Zend_Session_Namespace('monitorix-ui');
     }
 
     public function indexAction()
