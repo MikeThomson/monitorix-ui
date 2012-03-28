@@ -24,3 +24,21 @@
 #errorListTable {
 	table-layout:fixed;
 }
+
+.errorDetails>div>div:nth-child(odd) {
+    background-color: #F9F9F9;
+}
+
+.stackTraceDetails div.stackTraceLine:nth-child(odd) {
+    background-color: #E0E0E0;
+}
+
+#entryRequest label input {
+    display: inline;
+	margin-right:10px
+}
+
+#entryRequest label {
+    display: inline;
+	margin:0;
+}

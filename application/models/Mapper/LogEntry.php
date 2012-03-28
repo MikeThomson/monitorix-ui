@@ -100,4 +100,18 @@ class Model_Mapper_LogEntry {
 		}
 		return $entries;
 	}
+	
+	public function getProjects() {
+		$select = $this->getDbTable()->select();
+		$select->distinct();
+		$select->from($this->getDbTable(), 'projectName');
+		$resultSet = $this->getDbTable()->fetchAll($select);
+		
+		$entries   = array();
+		foreach ($resultSet as $row) {
+			$rec = $row->projectName;
+			$entries[] = $rec;
+		}
+		return $entries;
+	}
 }

@@ -16,18 +16,20 @@ class UserController extends Zend_Controller_Action
 
     public function loginAction() {
     	$form = new App_Form_Login();
+    	$form->populate($_POST);
     	if($this->getRequest()->isPost() && $form->isValid($_POST)) {
-    		$form->populate($_POST);
 	    	$mapper = new Model_Mapper_User();
 	    	if($mapper->checkLogin($form->loginusername->getValue(), $form->loginpassword->getValue())) {
-	    		$this->session->loggedIn == true;
+	    		$this->session->isLoggedIn = true;
+	    		return $this->_helper->redirector('index', 'display');
 	    	}
     	}
     	$this->view->form = $form;
     }
     
     public function logoutAction() {
-    	
+    	unset($this->sesison->loggedIn);
+    	return $this->_helper->redirector('login');
     }
 
 }
