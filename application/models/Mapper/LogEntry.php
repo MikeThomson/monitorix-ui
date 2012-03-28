@@ -86,7 +86,7 @@ class Model_Mapper_LogEntry {
 	}
 	
 	public function findByProjects($projects, $page = 1) {
-		$perPage = 3;
+		$perPage = 10;
 		$select = $this->getDbTable()->select();
 		foreach($projects as $project)
 			$select->orWhere('projectName = ?', $project);

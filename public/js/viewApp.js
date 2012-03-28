@@ -127,7 +127,7 @@ $(document).ready(function () {
 		template: _.template($('#errorDetailsTemplate').html()),
 
 		events: {
-			"click" : "toggleDetails",
+			"click .backLink" : "toggleDetails",
 		},
 		
 		initialize: function() {

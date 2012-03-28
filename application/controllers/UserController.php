@@ -9,11 +9,6 @@ class UserController extends Zend_Controller_Action
     	$this->session = new Zend_Session_Namespace('monitorix-ui');
     }
 
-    public function indexAction()
-    {
-        // action body
-    }
-
     public function loginAction() {
     	$form = new App_Form_Login();
     	$form->populate($_POST);
@@ -28,7 +23,7 @@ class UserController extends Zend_Controller_Action
     }
     
     public function logoutAction() {
-    	unset($this->sesison->loggedIn);
+    	unset($this->session->isLoggedIn);
     	return $this->_helper->redirector('login');
     }
 

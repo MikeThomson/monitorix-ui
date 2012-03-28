@@ -11,7 +11,6 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 600px;
 }
 
 #errorListTable td.errorLineShort {
@@ -23,10 +22,6 @@
 
 #errorListTable {
 	table-layout:fixed;
-}
-
-.errorDetails>div>div:nth-child(odd) {
-    background-color: #F9F9F9;
 }
 
 .stackTraceDetails div.stackTraceLine:nth-child(odd) {
@@ -41,4 +36,24 @@
 #entryRequest label {
     display: inline;
 	margin:0;
+}
+
+.detailsLabel {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.detailsData {
+	font-style:italic;
+}
+
+.backIcon {
+    position: relative;
+    top: 6px;
+}
+.backLink {
+    font-size: 1.5em;
+    cursor: pointer;
+	right: 90px;
+    top: 20px;
 }
